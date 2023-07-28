@@ -3,6 +3,8 @@ package com.firstproject.projectbf.controllers;
 import com.firstproject.projectbf.entities.Pessoa;
 import com.firstproject.projectbf.repositories.PessoaRepositories;
 import com.firstproject.projectbf.service.PessoaService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +21,8 @@ public class PessoaController {
     @Autowired
     private PessoaRepositories pessoaRepositories;
 
+    private static final Logger logger = LoggerFactory.getLogger(PessoaController.class);
+
     @GetMapping("/form")
     public String exibirFormulario(Model model) {
         model.addAttribute("pessoa", new Pessoa());
@@ -31,6 +35,7 @@ public class PessoaController {
         return "redirect:/form/teste";
     }
 
+
     @PostMapping("/excluir-pessoa")
     public String excluirPessoa(@ModelAttribute Pessoa pessoa) {
         pessoaService.excluirPessoa(pessoa);
@@ -38,32 +43,18 @@ public class PessoaController {
     }
 
     @GetMapping("/todas-pessoas")
-    public String buscarTodasPessoas(Pessoa pessoa, Model model) {
+    public String buscarTodasPessoas(Pessoa pessoa, Model model) { //não está sendo usado o @RequestParam - pois esta sendo passado o valor completo(pessoa) - não item especifico pela url
         String nome = pessoa.getNome();
         List<Pessoa> pessoasEncontradas = pessoaRepositories.findByNome(nome);
         model.addAttribute("pessoas", pessoasEncontradas);
-        return "resultado"; // Supondo que "resultado" é o nome do arquivo HTML (template) que exibe os resultados da busca.
+        return "resultado";
     }
 
-    //daqui pra baixo da erro no postman
+
     @GetMapping("/pessoas-por-nome")
-    public String buscarPessoasPorNome(@RequestParam String nome, Model model) {
+    public String buscarPessoasPorNome(@RequestParam String nome, Model model) { //usa-se o @RequestParam - pois esta sendo passado valores especificos para consulta
         List<Pessoa> pessoasEncontradas = pessoaService.buscarPessoasPorNome(nome);
         model.addAttribute("pessoas", pessoasEncontradas);
-        return "resultado"; // Supondo que "page" é o nome do arquivo HTML (template) que exibe os resultados da busca.
-    }
-
-    @GetMapping("/pessoas-salario")
-    public String buscarPessoasComSalarioMaiorQue(@RequestParam double salario, Model model) {
-        List<Pessoa> pessoasEncontradas = pessoaService.buscarPessoasComSalarioMaiorQue(salario);
-        model.addAttribute("pessoas", pessoasEncontradas);
-        return "resultado"; // Supondo que "page" é o nome do arquivo HTML (template) que exibe os resultados da busca.
-    }
-
-    @GetMapping("/pessoas-por-idade")
-    public String buscarPessoasPorIdade(@RequestParam int idade, Model model) {
-        List<Pessoa> pessoasEncontradas = pessoaService.buscarPessoasPorIdade(idade);
-        model.addAttribute("pessoas", pessoasEncontradas);
-        return "resultado"; // Supondo que "resultado" é o nome do arquivo HTML (template) que exibe os resultados da busca.
+        return "resultado";
     }
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário</title>
+</head>
+<body>
+<h1>Formulário de Pessoa</h1>
+<form th:action="@{/pessoa/form/criar-pessoa}" th:object="${pessoa}" method="post">
+  <label for="nome">Nome:</label>
+  <input type="text" th:field="*{nome}" id="nome" placeholder="Nome">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
+  <br>
+  <label for="idade">Idade:</label>
+  <input type="number" th:field="*{idade}" id="idade" placeholder="Idade">
+  <div class="alert alert-warning" th:if="${#fields.hasErrors('idade')}" th:errors="*{idade}"></div>
+  <br>
+  <label for="altura">Altura:</label>
+  <input type="number" step="0.01" th:field="*{altura}" id="altura" placeholder="Altura">
+  <div class="alert alert-warning" th:if="${#fields.hasErrors('altura')}" th:errors="*{altura}"></div>
+  <br>
+  <label for="salario">Salario:</label>
+  <input type="number" step="0.01" th:field="*{salario}" id="salario" placeholder="Salario">
+  <div class="alert alert-warning" th:if="${#fields.hasErrors('salario')}" th:errors="*{salario}"></div>
+  <br>
+  <button type="submit">Salvar</button>
+</form>
+
+<p th:text="${mensagem}" style="color: green;"></p>
+<p th:text="${erro}" style="color: red;"></p>
+</body>
+</html>
