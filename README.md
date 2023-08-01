@@ -1,5 +1,12 @@
 # Projeto Testando conhecimentos - Java | Spring | Thymeleaf
 
+## Páginas
+<div style="display: inline_block"><br>
+  <img align="center" alt="Java" height="60" width="70" src="https://raw.githubusercontent.com/ViniciusPelizzari/pessoa/main/projectbf/src/main/resources/static/img/page_formulario.png">
+  <img align="center" alt="spring" height="60" width="70" src="https://raw.githubusercontent.com/ViniciusPelizzari/pessoa/main/projectbf/src/main/resources/static/img/page_resultado.png">
+  <img align="center" alt="thymeleaf" height="60" width="70" src="https://raw.githubusercontent.com/ViniciusPelizzari/pessoa/main/projectbf/src/main/resources/static/img/page_sucesso.png">
+</div>
+
 ## Tecnologias utilizadas
 <div style="display: inline_block"><br>
   <img align="center" alt="Java" height="60" width="70" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-plain.svg">
