@@ -7,12 +7,16 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+//Repositório de dados para a entidade Pessoa.
 @Repository //não tinha
 public interface PessoaRepositories extends JpaRepository<Pessoa, Long> {
 
-    @Query("SELECT p FROM Pessoa p WHERE p.nome = :nome")
-    List<Pessoa> findByNome(String nome);
-
+    /**
+     * Busca todas as pessoas que contenham o nome especificado (ignorando maiúsculas e minúsculas).
+     *
+     * @param nome O nome a ser pesquisado.
+     * @return Uma lista de pessoas que contenham o nome especificado.
+     */
     @Query("SELECT p FROM Pessoa p WHERE p.nome LIKE %:nome%")
-    List<Pessoa> findByNomeContainingIgnoreCase(String nome);
+    List<Pessoa> buscaPessoasEspecificasPorNome(String nome);
 }

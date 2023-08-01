@@ -12,7 +12,6 @@ public class ProjectBfApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectBfApplication.class, args);
-		System.out.println("OK!");
+		System.out.println("EM EXECUÇÃO - OK!");
 	}
-
 }

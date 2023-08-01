@@ -1,0 +1,6 @@
+com.firstproject.projectbf
+com.firstproject.projectbf.config
+com.firstproject.projectbf.controllers
+com.firstproject.projectbf.entities
+com.firstproject.projectbf.repositories
+com.firstproject.projectbf.service
