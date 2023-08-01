@@ -24,7 +24,7 @@ public class PessoaService {
         pessoaRepositories.delete(pessoa);
     }
 
-    @Transactional(readOnly = true) //(readOnly = true) habilitado apenas para leitura
+    @Transactional
     public List<Pessoa> buscarPessoasPorNome(String nome) {
         return pessoaRepositories.findByNomeContainingIgnoreCase(nome);
     }

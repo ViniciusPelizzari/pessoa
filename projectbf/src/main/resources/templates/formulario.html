@@ -1,32 +1,49 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <title>Formulário</title>
+  <link rel="stylesheet" href="/static/base.css">
+  <link rel="stylesheet" href="/static/reset.css">
+  <link rel="icon" href="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.ico">
 </head>
 <body>
-<h1>Formulário de Pessoa</h1>
-<form th:action="@{/pessoa/form/criar-pessoa}" th:object="${pessoa}" method="post">
-  <label for="nome">Nome:</label>
-  <input type="text" th:field="*{nome}" id="nome" placeholder="Nome">
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
-  <br>
-  <label for="idade">Idade:</label>
-  <input type="number" th:field="*{idade}" id="idade" placeholder="Idade">
-  <div class="alert alert-warning" th:if="${#fields.hasErrors('idade')}" th:errors="*{idade}"></div>
-  <br>
-  <label for="altura">Altura:</label>
-  <input type="number" step="0.01" th:field="*{altura}" id="altura" placeholder="Altura">
-  <div class="alert alert-warning" th:if="${#fields.hasErrors('altura')}" th:errors="*{altura}"></div>
-  <br>
-  <label for="salario">Salario:</label>
-  <input type="number" step="0.01" th:field="*{salario}" id="salario" placeholder="Salario">
-  <div class="alert alert-warning" th:if="${#fields.hasErrors('salario')}" th:errors="*{salario}"></div>
-  <br>
-  <button type="submit">Salvar</button>
-</form>
+  <div th:replace="base :: buttons"></div>
+  <h1 class="h1_formulario">Formulário de Cadastro de Pessoa</h1>
+  <main class="main_formulario">
+    <form th:object="${pessoa}" th:action="@{/criar-pessoa}" method="post">
+      <div class="form_formulario">
+        <label for="nome" class="label_formulario">Name:</label>
+        <input type="text" id="nome" name="nome" th:field="*{nome}" required class="input_formulario">
+      </div>
+        <br>
+      <div class="form_formulario">
+        <label for="idade" class="label_formulario">Idade:</label>
+        <input type="number" id="idade" name="idade" th:field="*{idade}" required class="input_formulario">
+      </div>
+        <br>
+      <div class="form_formulario">
+        <label for="altura" class="label_formulario">Altura:</label>
+        <input type="number" step="0.01" id="altura" name="altura" th:field="*{altura}" required class="input_formulario">
+      </div>
+        <br>
+      <div class="form_formulario">
+        <label for="salario" class="label_formulario">Salário:</label>
+        <input type="number" step="0.01" id="salario" name="salario" th:field="*{salario}" required class="input_formulario">
+      </div>
+        <br>
+      <button type="submit" class="button_formulario">Salvar</button>
+      <button class="button_formulario"><a href="/todas-pessoas" class="a_sucesso">Lista Pessoas</a></button>
+    </form>
+  </main>
 
-<p th:text="${mensagem}" style="color: green;"></p>
-<p th:text="${erro}" style="color: red;"></p>
+<footer th:fragment="footer">
+  <div class="class_img_footer">
+    <img src="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.png" alt="Logo - Página perfil" class="img_footer">
+  </div>
+  <p class="copyright">&copy; Copyright Vinícius P. S. - Since 2023</p>
+  <p class="gloria">&#8224; Glória a Deus!</p>
+</footer>
+
 </body>
 </html>

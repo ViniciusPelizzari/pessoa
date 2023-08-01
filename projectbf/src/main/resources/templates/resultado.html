@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Pessoas cadastradas</title>
+  <link rel="stylesheet" href="/static/base.css">
+  <link rel="stylesheet" href="/static/reset.css">
+  <link rel="icon" href="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.ico">
+</head>
+<body>
+  <h1 class="h1_resultado">Pessoas cadastradas</h1>
+
+  <main class="main_resultado">
+    <form method="get" action="/pessoas-por-nome" class="campo_pesquisa">
+      <div><label for="nome" class="label_resultado">Buscar por nome</label></div>
+      <div><input type="text" id="nome" name="nome" placeholder="Digite o nome" required class="input_resultado"></div>
+      <div><button type="submit" class="buttonres_buscar">Buscar</button></div>
+      <div><button type="submit" class="buttonres_formulario"><a href="/form" class="ares_formulario">Formulário</a></button></div>
+    </form>
+
+    <table>
+      <thead>
+      <tr>
+        <th class="th_table">Name</th>
+        <th class="th_table">Idade</th>
+        <th class="th_table">Altura</th>
+        <th class="th_table">Salário</th>
+        <th class="th_table"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Aqui serão exibidas as pessoas encontradas -->
+      <tr th:each="pessoa : ${pessoas}">
+        <td th:text="${pessoa.nome}"></td>
+        <td th:text="${pessoa.idade}"></td>
+        <td th:text="${pessoa.altura}"></td>
+        <td th:text="${pessoa.salario}"></td>
+        <td>
+          <!-- Botão para excluir a pessoa -->
+          <form method="post" action="/excluir-pessoa">
+            <input type="hidden" name="id" th:value="${pessoa.id}" />
+            <button type="submit">Excluir</button>
+          </form>
+        </td>
+      </tr>
+      <!-- Fim do loop -->
+      </tbody>
+    </table>
+  </main>
+
+<footer th:fragment="footer">
+  <div class="class_img_footer">
+    <img src="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.png" alt="Logo - Página perfil" class="img_footer">
+  </div>
+  <p class="copyright">&copy; Copyright Vinícius P. S. - Since 2023</p>
+  <p class="gloria">&#8224; Glória a Deus!</p>
+</footer>
+
+</body>
+</html>

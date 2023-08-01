@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sucesso - cadastro</title>
+    <link rel="stylesheet" href="/static/base.css">
+    <link rel="stylesheet" href="/static/reset.css">
+    <link rel="icon" href="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.ico">
+</head>
+<body>
+    <div th:replace="base :: buttons"></div>
+    <h1 class="h1_sucesso">Dados salvos com sucesso!</h1>
+
+    <main class="main_sucesso">
+        <div>
+            <button class="button_sucesso"><a href="/form" class="a_sucesso">Formulário</a></button>
+            <button class="button_sucesso"><a href="/todas-pessoas" class="a_sucesso">Lista Pessoas</a></button>
+        </div>
+    </main>
+
+<footer th:fragment="footer">
+    <div class="class_img_footer">
+        <img src="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.png" alt="Logo - Página perfil" class="img_footer">
+    </div>
+    <p class="copyright">&copy; Copyright Vinícius P. S. - Since 2023</p>
+    <p class="gloria">&#8224; Glória a Deus!</p>
+</footer>
+
+</body>
+</html>

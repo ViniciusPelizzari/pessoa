@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="navlinks">
+  <!--<a href="/">Home</a>--> <a href="/form">Formulario</a> - <a href="/todas-pessoas">Resutado</a>
+</div>
+<div th:fragment="buttons">
+    <!--<button><a href="/">Home</a></button>-->
+    <button><a href="/form">Formulário</a></button>
+    <button><a href="/todas-pessoas">Lista Pessoas</a></button>
+</div>
+    <footer th:fragment="footer">
+        <div class="class_img_footer">
+            <img src="https://github.com/ViniciusPelizzari/perfil_web/blob/main/img/1escopi-removebg-preview.png" alt="Logo - Página perfil" class="img_footer">
+        </div>
+        <p class="copyright">&copy; Copyright Vinícius P. S. - Since 2023</p>
+        <p class="gloria">&#8224; Glória a Deus!</p>
+    </footer>
+</body>
+</html>
