@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Pessoas cadastradas</title>
-  <link rel="stylesheet" href="/static/css/base.css">
-  <link rel="stylesheet" href="/static/css/reset.css">
+  <link th:href="@{/css/base.css}" rel="stylesheet" />
+  <link th:href="@{/css/reset.css}" rel="stylesheet" />
   <link rel="icon" href="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.ico">
 </head>
 <body>
@@ -14,7 +14,7 @@
   <main class="main_resultado">
     <form method="get" action="/pessoas-por-nome" class="campo_pesquisa">
       <div><label for="nome" class="label_resultado">Buscar por nome</label></div>
-      <div><input type="text" id="nome" name="nome" placeholder="Digite o nome" required class="input_resultado"></div>
+      <div><input type="text" id="nome" name="nome" placeholder="Digite o nome" class="input_resultado"></div>
       <div><button type="submit" class="buttonres_buscar">Buscar</button></div>
       <div><button type="submit" class="buttonres_formulario"><a href="/form" class="ares_formulario">Formulário</a></button></div>
     </form>

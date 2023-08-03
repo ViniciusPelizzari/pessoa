@@ -162,6 +162,7 @@ table {
     width: 100%;
     margin-bottom: 20px;
     color: #FFFFFF;
+    text-align: center;
 }
 
 th {
@@ -171,6 +172,12 @@ th {
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 0.6px 0.6px blue;
+    margin-top: 10px;
+    text-align: center;
+}
+
+tr{
+    margin-top: 10px;
 }
 
 td {
@@ -178,6 +185,7 @@ td {
     border-bottom: 1px solid #ddd;
     color: #FFFFFF;
     border-bottom: 1px solid #FFFFFF;
+    text-align: center;
 }
 
 td form {
@@ -193,6 +201,7 @@ td form button {
     border-radius: 5px;
     padding: 6px 12px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 td form button:hover {
