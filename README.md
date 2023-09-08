@@ -148,8 +148,3 @@ create table projectbf (altura float(53) not null, idade integer not null, salar
 ```
 
 (colar no Query Tool - PostgreSQL ou Docker Compose - o que estiver usando).
-
-<div style="display: flex; align-items: center;">
-  <img align="center" alt="logo_perfil" height="60" width="70" src="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.png">
-  <span style="margin-left: 10px;">V_Pelizzari</span>
-</div>
